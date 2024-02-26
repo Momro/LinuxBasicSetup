@@ -6,6 +6,7 @@ sudo apt install konsole
 sudo apt install gcc
 sudo apt install make
 sudo apt install curl
+sudo apt install git
 ```
 
 ## Guest Additions
