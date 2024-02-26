@@ -2,11 +2,7 @@
 
 ## Minimale Installation mit Zusatzpaketen
 ```
-sudo apt install konsole
-sudo apt install gcc
-sudo apt install make
-sudo apt install curl
-sudo apt install git
+sudo apt install konsole gcc make curl git neovim
 ```
 
 ## Guest Additions
