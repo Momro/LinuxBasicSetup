@@ -1,3 +1,11 @@
+# Raspberry Pi Basic Setup
+
+```
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y make curl git neovim
+```
+
 # UbuntuSetup
 
 ## Minimale Installation mit Zusatzpaketen
@@ -21,3 +29,7 @@ sudo apt install virtualbox-guest-dkms
 
 * Gemeinsame Zwischenablage anschalten
 * 
+
+# ZSH
+
+https://github.com/Momro/zshconfig
