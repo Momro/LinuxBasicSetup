@@ -4,6 +4,7 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y make curl git neovim
+sudo apt autoremove -y
 ```
 
 # UbuntuSetup
@@ -29,6 +30,25 @@ sudo apt install virtualbox-guest-dkms
 
 * Gemeinsame Zwischenablage anschalten
 * 
+
+# SSH
+
+https://github.com/Momro/ssh-config/tree/main
+
+## private key generieren
+
+In Windows:
+```
+$ ssh-keygen
+$ cat <file>
+ssh-ed25519 ...... user@host
+```
+
+In Linux:
+```
+key="ssh-ed25519 ...... user@host"
+echo $key >> ~/.ssh/authorized_keys
+```
 
 # ZSH
 
