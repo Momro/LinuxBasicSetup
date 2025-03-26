@@ -56,3 +56,6 @@ https://github.com/Momro/zshconfig
 ```
 curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash
 ```
+
+# visudo auf vi
+sudo update-alternatives --config editor
