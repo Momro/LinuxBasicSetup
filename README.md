@@ -53,3 +53,6 @@ echo $key >> ~/.ssh/authorized_keys
 # ZSH
 
 https://github.com/Momro/zshconfig
+```
+curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash
+```
