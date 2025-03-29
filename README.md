@@ -1,10 +1,7 @@
 # Raspberry Pi Basic Setup
 
 ```
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y make curl git neovim
-sudo apt autoremove -y
+sudo apt update; sudo apt upgrade -y ; sudo apt install -y make curl git neovim ; sudo apt autoremove -y
 ```
 
 # UbuntuSetup
