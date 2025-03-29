@@ -44,6 +44,7 @@ ssh-ed25519 ...... user@host
 In Linux:
 ```
 key="ssh-ed25519 ...... user@host"
+mkdir ~/.ssh
 echo $key >> ~/.ssh/authorized_keys
 ```
 
