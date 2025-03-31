@@ -9,6 +9,11 @@ Dann:
 sudo apt update && sudo apt upgrade -y && sudo apt install -y make curl git neovim && sudo apt autoremove -y && sudo apt dist-upgrade -y && curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash
 ```
 
+Alles in einem:
+```
+sudo apt install screen -y && screen -S install && curl -s https://raw.githubusercontent.com/Momro/LinuxBasicSetup/refs/heads/main/pi-basic-install.sh | bash
+```
+
 # UbuntuSetup
 
 ## Minimale Installation mit Zusatzpaketen
