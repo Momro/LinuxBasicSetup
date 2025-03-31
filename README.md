@@ -1,14 +1,14 @@
 # Raspberry Pi Basic Setup
 
 ```
-sudo apt update && sudo apt upgrade -y && sudo apt install -y make curl git neovim && sudo apt autoremove -y && sudo apt dist-upgrade -y && curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash
+sudo apt update && sudo apt upgrade -y && sudo apt install -y make curl git neovim screen && sudo apt autoremove -y && sudo apt dist-upgrade -y && curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash
 ```
 
 # UbuntuSetup
 
 ## Minimale Installation mit Zusatzpaketen
 ```
-sudo apt install konsole gcc make curl git neovim
+sudo apt install konsole gcc make curl git neovim screen
 ```
 
 ## Guest Additions
