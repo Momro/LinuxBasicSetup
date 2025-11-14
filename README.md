@@ -22,10 +22,10 @@ sudo apt install konsole gcc make curl git neovim screen
 ```
 
 ## Guest Additions
-´´´
+```
 sudo apt install perl gcc make
 sudo /media/.../VBoxLinuxAdditions.run
-´´´
+```
 
 ## Shared Folder stuff
 ```
