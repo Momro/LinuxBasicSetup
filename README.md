@@ -16,6 +16,19 @@ sudo apt install screen -y && screen -S install && curl -s https://raw.githubuse
 
 # UbuntuSetup
 
+## MotD
+
+```
+if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ]; then
+        # Fall back to using the very slow lsb_release utility
+        DISTRIB_DESCRIPTION=$(lsb_release -s -d)
+fi
+
+#printf "Welcome to %s (%s %s %s)\n" "$DISTRIB_DESCRIPTION" "$(uname -o)" "$(uname -r)" "$(uname -m)"
+#printf "\n"
+printf "Welcome! \nThis is %s on server '%s'\nIP address is %s\n\n" "$DISTRIB_DESCRIPTION" "$(hostname)" "$(ip a | grep 192 | sed 's/inet //g' | sed 's/ metric.*$//g' | sed 's/ //g')"
+```
+
 ## Minimale Installation mit Zusatzpaketen
 ```
 sudo apt install konsole gcc make curl git neovim screen
