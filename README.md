@@ -29,6 +29,11 @@ fi
 printf "Welcome! \nThis is %s on server '%s'\nIP address is %s\n\n" "$DISTRIB_DESCRIPTION" "$(hostname)" "$(ip a | grep 192 | sed 's/inet //g' | sed 's/ metric.*$//g' | sed 's/ //g')"
 ```
 
+## time zone
+```
+sudo timedatectl set-timezone Europe/Berlin
+```
+
 ## Minimale Installation mit Zusatzpaketen
 ```
 sudo apt install konsole gcc make curl git neovim screen
