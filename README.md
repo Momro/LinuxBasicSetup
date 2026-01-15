@@ -87,3 +87,48 @@ curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/instal
 
 # visudo auf vi
 sudo update-alternatives --config editor
+
+# Alpine
+
+apk add openssh
+rc-update add sshd default
+sed -i '/^#*PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config
+rc-service sshd start
+
+login via SSH
+
+apk update && apk upgrade
+
+Alpine LXC with Browser [https://www.filipnet.de/proxmox-lxc-alpine-browser/]
+
+Also install xorgxrdp. It won't work otherwise:
+```
+apk add xorgxrdp
+```
+
+
+Signal:
+
+Signal:~# cat /etc/apk/repositories 
+https://dl-cdn.alpinelinux.org/alpine/v3.22/main
+https://dl-cdn.alpinelinux.org/alpine/v3.22/community
+http://dl-cdn.alpinelinux.org/alpine/edge/main
+http://dl-cdn.alpinelinux.org/alpine/edge/community
+http://dl-cdn.alpinelinux.org/alpine/edge/testingz
+
+
+Signal:~# cat /home/<user>/.xsession
+#!/bin/sh
+
+#
+# ~/.xsession
+#
+# Executed by xdm/gdm/kdm at login
+#
+
+/bin/sh -l ~/.xinitrc
+
+xrdp-chansrv &
+signal-desktop --start-maximized --disable-gpu &
+autocutsel -fork &
+exec openbox-session
