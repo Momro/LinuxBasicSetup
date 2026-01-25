@@ -6,7 +6,7 @@ screen -S install
 ```
 Dann:
 ```
-sudo apt install -y make curl git neovim && sudo apt update && sudo apt upgrade -y &&  sudo apt autoremove -y && sudo apt dist-upgrade -y && curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash
+sudo apt install -y make curl git neovim net-tools && sudo apt update && sudo apt upgrade -y &&  sudo apt autoremove -y && sudo apt dist-upgrade -y && curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash
 ```
 
 Alles in einem:
@@ -36,7 +36,7 @@ sudo timedatectl set-timezone Europe/Berlin
 
 ## Minimale Installation mit Zusatzpaketen
 ```
-sudo apt install konsole gcc make curl git neovim screen
+sudo apt install konsole gcc make curl git neovim screen net-tools
 ```
 
 ## Guest Additions
