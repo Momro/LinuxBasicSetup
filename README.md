@@ -35,8 +35,19 @@ sudo timedatectl set-timezone Europe/Berlin
 ```
 
 ## Minimale Installation mit Zusatzpaketen
+
 ```
-sudo apt install konsole gcc make curl git neovim screen net-tools
+sudo apt install konsole gcc make curl git neovim screen net-tools flameshot vivaldi-stable
+```
+
+## Signal
+
+```
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+wget -O signal-desktop.sources https://updates.signal.org/static/desktop/apt/signal-desktop.sources
+cat signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources > /dev/null
+sudo apt update && sudo apt install signal-desktop
 ```
 
 ## Guest Additions
