@@ -6,7 +6,7 @@ screen -S install
 ```
 Dann:
 ```
-sudo apt install -y make curl git neovim net-tools jq iputils-ping dnsutils && curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash && sudo apt update && sudo apt upgrade -y &&  sudo apt autoremove -y && sudo apt dist-upgrade -y
+sudo apt install -y make curl git neovim net-tools jq iputils-ping dnsutils cron && curl -s https://raw.githubusercontent.com/Momro/zshconfig/refs/heads/main/install.sh | bash && sudo apt update && sudo apt upgrade -y &&  sudo apt autoremove -y && sudo apt dist-upgrade -y
 ```
 
 Alles in einem:
