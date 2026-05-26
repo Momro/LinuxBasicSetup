@@ -14,14 +14,40 @@ sudo apt install -y make curl git neovim net-tools jq iputils-ping dnsutils cron
 ## MotD
 
 ```
-if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ]; then
-        # Fall back to using the very slow lsb_release utility
-        DISTRIB_DESCRIPTION=$(lsb_release -s -d)
+# remove executable bit, so the original files cannot be executed anymore -> so we don't have to delete them
+for f in /etc/update-motd.d/* ; do
+  sudo chmod -x $f
+done
+
+# create new file, and make it executable
+sudo touch /etc/update-motd.d/00-custom-header
+sudo chmod +x /etc/update-motd.d/00-custom-header
+```
+
+Insert this content into the `00-custom-header`:
+
+```
+#!/bin/sh
+echo ""
+echo "### === SSH CONNECTION === ###"
+echo ""
+
+# Hostname
+echo "Host:        $(hostname)"
+
+# read OS version
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    echo "OS version:  $PRETTY_NAME"
 fi
 
-#printf "Welcome to %s (%s %s %s)\n" "$DISTRIB_DESCRIPTION" "$(uname -o)" "$(uname -r)" "$(uname -m)"
-#printf "\n"
-printf "Welcome! \nThis is %s on server '%s'\nIP address is %s\n\n" "$DISTRIB_DESCRIPTION" "$(hostname)" "$(ip a | grep 192 | sed 's/inet //g' | sed 's/ metric.*$//g' | sed 's/ //g')"
+# get primary IPv4
+IP_ADDR=$(ip -4 addr show $(ip route | awk '/default/ {print $5}' | head -n1) | awk '/inet / {print $2}' | cut -d/ -f1)
+if [ -n "$IP_ADDR" ]; then
+    echo "IP Address:  $IP_ADDR"
+fi
+
+echo "" # empty line at the end for optics
 ```
 
 ## time zone
