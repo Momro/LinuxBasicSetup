@@ -18,12 +18,13 @@ sudo apt install -y make curl git neovim net-tools jq iputils-ping \
 ```
 # remove executable bit, so the original files cannot be executed anymore -> so we don't have to delete them
 for f in /etc/update-motd.d/* ; do
+  echo "removing executable bit for ${f}"
   sudo chmod -x $f
 done
 
 # create new file, and make it executable
-sudo touch /etc/update-motd.d/00-custom-header
-sudo chmod +x /etc/update-motd.d/00-custom-header
+echo "touch 00-custom-header, and make it executable"
+sudo touch /etc/update-motd.d/00-custom-header && sudo chmod +x /etc/update-motd.d/00-custom-header
 ```
 
 Insert this content into the `00-custom-header`:
