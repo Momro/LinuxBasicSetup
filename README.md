@@ -22,35 +22,11 @@ for f in /etc/update-motd.d/* ; do
   sudo chmod -x $f
 done
 
-# create new file, and make it executable
-echo "touch 00-custom-header, and make it executable"
-sudo touch /etc/update-motd.d/00-custom-header && sudo chmod +x /etc/update-motd.d/00-custom-header
-```
-
-Insert this content into the `00-custom-header`:
-
-```
-#!/bin/sh
-echo ""
-echo "### === SSH CONNECTION === ###"
-echo ""
-
-# Hostname
-echo "Host:        $(hostname)"
-
-# read OS version
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    echo "OS version:  $PRETTY_NAME"
-fi
-
-# get primary IPv4
-IP_ADDR=$(ip -4 addr show $(ip route | awk '/default/ {print $5}' | head -n1) | awk '/inet / {print $2}' | cut -d/ -f1)
-if [ -n "$IP_ADDR" ]; then
-    echo "IP Address:  $IP_ADDR"
-fi
-
-echo "" # empty line at the end for optics
+# get this repo's MotD, make it executable, symlink in /etc/update-motd.d/
+git clone https://github.com/Momro/motd "${HOME}"/motd
+cd "${HOME}/motd"
+sudo chmod +x 00-custom-header
+sudo ln -s "${HOME}/motd/00-custom-header" /etc/update-motd.d/00-custom-header```
 ```
 
 ## time zone
